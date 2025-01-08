@@ -24,14 +24,14 @@ https://docs.aiogram.dev/en/latest/
 
 ## How to run the code
 
-'''bash 
+```bash
 conda create -n telebot python=3.7 -y
-'''
+```
 
-'''bash
+```bash
 conda activate telebot
-'''
+```
 
-'''bash
+```bash
 pip install -r requirements.txt
-''''
+```
