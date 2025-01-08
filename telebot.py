@@ -14,9 +14,10 @@ class Reference:
 
 
 load_dotenv()
-openai.api_key = os.getenv("OpenAI_API_KEY")  
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 reference = Reference()
+
 
 TOKEN = os.getenv("TOKEN")
 
@@ -76,7 +77,7 @@ async def chatgpt(message: types.Message):
     """
     print(f">>> USER: \n\t{message.text}")
     response = openai.ChatCompletion.create(
-        model = MODEL_NAME,
+        model = "gpt-3.5-turbo",
         messages = [
             {"role": "assistant", "content": reference.response}, # role assistant
             {"role": "user", "content": message.text} #our query 
@@ -90,4 +91,4 @@ async def chatgpt(message: types.Message):
 
 
 if __name__ == "__main__":
-    executor.start_polling(dispatcher, skip_updates=True)
+    executor.start_polling(dispatcher, skip_updates=False)
